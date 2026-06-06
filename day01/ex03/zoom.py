@@ -24,7 +24,7 @@ def ft_zoom(img: np.ndarray) -> np.ndarray:
 def main():
     """Load animal.jpeg, zoom in and display it."""
     try:
-        img = ft_load("../animal.jpeg")
+        img = ft_load("animal.jpeg")
         if img.size == 0:
             return
         zoomed = ft_zoom(img)
