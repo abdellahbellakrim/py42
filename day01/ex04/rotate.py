@@ -11,16 +11,14 @@ def ft_transpose(img: np.ndarray) -> np.ndarray:
         if img.ndim != 2:
             raise ValueError("Input must be a 2D array")
 
-        rows = img.shape[0]  # 400
-        cols = img.shape[1]  # 400
+        rows = img.shape[0]
+        cols = img.shape[1]
 
-        # new array with flipped shape
         transposed = np.empty((cols, rows), dtype=img.dtype)
 
         for i in range(rows):
             for j in range(cols):
                 transposed[j][i] = img[i][j]
-                # swap row and col index
 
         return transposed
 
@@ -39,11 +37,7 @@ def ft_zoom(img: np.ndarray) -> np.ndarray:
         if img.ndim != 3:
             raise ValueError("Image must be a 3D array (H, W, C)")
 
-        # same crop as ex03, squeeze removes the (... ,1) dimension
-        # giving us a clean 2D array for transpose
-        zoomed = img[184:584, 312:712, :1].squeeze()
-        # squeeze() removes dimensions of size 1
-        # (400, 400, 1) → (400, 400)
+        zoomed = img[184:584, 412:812, :1].squeeze()
 
         print(f"The shape of image is: {zoomed.shape}")
         print(zoomed)
@@ -57,7 +51,7 @@ def ft_zoom(img: np.ndarray) -> np.ndarray:
 def main():
     """Load animal.jpeg, crop, transpose and display."""
     try:
-        img = ft_load("../animal.jpeg")
+        img = ft_load("animal.jpeg")
         if img.size == 0:
             return
 

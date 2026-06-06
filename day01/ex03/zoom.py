@@ -12,7 +12,7 @@ def ft_zoom(img: np.ndarray) -> np.ndarray:
             raise ValueError("Image array is empty")
         if img.ndim != 3:
             raise ValueError("Image must be a 3D array (H, W, C)")
-        zoomed = img[184:584, 312:712, :1]
+        zoomed = img[184:584, 412:812, :1]
         print(f"New shape after slicing: {zoomed.shape}")
         print(zoomed)
         return zoomed
